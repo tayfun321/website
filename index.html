@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#013a55" />
+    <meta name="color-scheme" content="light" />
+    
+    <!-- Preconnect für Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Inter Schriftart -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Preload Hero Image (Performance) -->
+    <link rel="preload" as="image" href="/images/hero-bg.jpg" type="image/jpeg" fetchpriority="high">
+    
+    <!-- Critical CSS inline für schnelles Rendering -->
+    <style>
+      /* Critical CSS - minimales Styling für First Paint */
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      html{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;-webkit-text-size-adjust:100%}
+      body{background-color:#fff;color:#1f2937}
+      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+      #root{min-height:100vh}
+    </style>
+    
+    <title>TY-Dienstleistung | Hausmeisterservice & Gebäudereinigung</title>
+    
+    <!-- JSON-LD LocalBusiness Schema (wird von React überschrieben, aber als Fallback) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TY-Dienstleistung",
+      "description": "Professioneller Hausmeisterservice, Gebäudereinigung, Entrümpelung und Entsorgung",
+      "url": "https://ty-dienstleistung.de",
+      "telephone": "+4915756276633",
+      "email": "T.Y-Dienstleistung@gmx.de",
+      "founder": {
+        "@type": "Person",
+        "name": "Tayfun Yaroglu"
+      },
+      "areaServed": "Deutschland",
+      "priceRange": "€€"
+    }
+    </script>
+  </head>
+  <body>
+    <!-- Skip Link für Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-primary focus:px-4 focus:py-2 focus:rounded-md">
+      Zum Hauptinhalt springen
+    </a>
+    
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
