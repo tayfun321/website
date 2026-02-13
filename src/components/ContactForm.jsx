@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import { Send, CheckCircle, AlertCircle, Phone } from 'lucide-react';
+import { CheckCircle, AlertCircle, Phone } from 'lucide-react';
 import CTAButton from './CTAButton';
 import companyData from '../data/company';
+
+// Web3Forms Access Key
+const WEB3FORMS_KEY = '341d5552-90da-4eed-aa29-ccb2cbdeae5c';
 
 /**
  * ContactForm Component
@@ -68,7 +71,7 @@ function ContactForm({ showPhoneHint = true }) {
     }
   };
 
-  // Submit Handler
+  // Submit Handler - Web3Forms Integration
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitError(null);
@@ -78,17 +81,29 @@ function ContactForm({ showPhoneHint = true }) {
     setIsSubmitting(true);
 
     try {
-      // Simulation API-Call (in Produktion durch echten Endpoint ersetzen)
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Web3Forms API Call
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Nicht angegeben',
+          message: formData.message,
+          privacy: formData.privacy,
+          subject: `Neue Anfrage von ${formData.name} über TY-Dienstleistung Website`,
+          from_name: 'TY-Dienstleistung Kontaktformular',
+        }),
+      });
 
-      // Hier würde normalerweise der API-Call stehen:
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData),
-      // });
+      const data = await response.json();
 
-      setIsSubmitted(true);
+      if (data.success) {
+        setIsSubmitted(true);
+      } else {
+        throw new Error(data.message || 'Fehler beim Senden');
+      }
     } catch (error) {
       setSubmitError(
         'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder rufen Sie uns an.'
