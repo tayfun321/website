@@ -152,7 +152,7 @@ function Kontakt() {
             {[
               {
                 q: 'Wie schnell können Sie einen Termin anbieten?',
-                a: 'In den meisten Fällen können wir innerhalb von 1-3 Tagen einen Termin anbieten. Bei dringenden Anliesten rufen Sie uns bitte direkt an.',
+                a: 'In den meisten Fällen können wir innerhalb von 1-3 Tagen einen Termin anbieten. Bei dringenden Anliegen rufen Sie uns bitte direkt an.',
               },
               {
                 q: 'Erstellen Sie kostenlose Kostenvoranschläge?',

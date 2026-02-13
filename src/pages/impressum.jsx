@@ -67,15 +67,28 @@ function Impressum() {
               </div>
             </div>
 
+            {/* Steuernummer */}
+            <div className="mb-12">
+              <h3 className="heading-3 mb-4">Steuernummer</h3>
+              <div className="bg-gray-50 rounded-xl p-6">
+                <p className="text-gray-600">
+                  Steuernummer gemäß § 139 Abs. 1 AO:
+                </p>
+                <p className="font-medium text-gray-900 mt-2">
+                  139/5251/3376
+                </p>
+              </div>
+            </div>
+
             {/* Umsatzsteuer-ID */}
             <div className="mb-12">
               <h3 className="heading-3 mb-4">Umsatzsteuer-ID</h3>
               <div className="bg-gray-50 rounded-xl p-6">
                 <p className="text-gray-600">
-                  Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:
+                  Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
                 </p>
                 <p className="font-medium text-gray-900 mt-2">
-                  [Wird nachgereicht]
+                  DE 83 921 437 567
                 </p>
               </div>
             </div>
